@@ -1,9 +1,13 @@
+// git install
+require('lambda-git')({updateEnv: updateEnv == undefined ? true : updateEnv});
+
+// git setting
 config = require('config');
 const id = config.id;
 const pass = config.pass;
 const repogitory = 'https://' + id + ':' + pass + '@github.com/naoki0531/AwpCms.git';
 const localDir = '/tmp/awp/';
-require('lambda-git')();
+
 var convert = require('./convert.js');
 var send = require('./send.js');
 

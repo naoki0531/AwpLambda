@@ -4,6 +4,6 @@ var context = {
         return;
     }
 };
-// env = 'local'!;
+updateEnv = false;
 var lambd = require("./awp.js");
 lambd.handler(event, context);
