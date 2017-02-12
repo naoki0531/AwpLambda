@@ -5,5 +5,5 @@ var context = {
     }
 };
 updateEnv = false;
-var lambd = require("./awp.js");
+var lambd = require("./index.js");
 lambd.handler(event, context);
