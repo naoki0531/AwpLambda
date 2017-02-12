@@ -5,6 +5,7 @@
   "dependencies": {
     "config": "^1.25.1",
     "lambda-git": "^0.1.0",
+    "marked": "^0.3.6",
     "simple-git": "^1.65.0"
   },
   "devDependencies": {},
