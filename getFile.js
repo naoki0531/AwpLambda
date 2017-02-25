@@ -5,7 +5,8 @@ require('lambda-git')({updateEnv: typeof(updateEnv) === undefined ? true : updat
 config = require('config');
 const id = config.id;
 const pass = config.pass;
-const repogitory = 'https://' + id + ':' + pass + '@github.com/naoki0531/AwpCms.git';
+const repogitory = config.repogitory;
+const repogitoryUrl = 'https://' + id + ':' + pass + '@' + repogitory;
 const localDir = '/tmp/awp/';
 
 module.exports = function(event, context){
@@ -15,7 +16,7 @@ module.exports = function(event, context){
     var cloneDir = localDir + date.getTime() + '/';
 
     return new Promise(function(resolve, reject){
-        simpleGit().clone(repogitory, cloneDir, '', function(){
+        simpleGit().clone(repogitoryUrl, cloneDir, '', function(){
             fs.readFile(cloneDir + '20170203.txt', 'utf-8', function(err, data){
                 resolve(data);
             });
