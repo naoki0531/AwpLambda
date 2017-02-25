@@ -1,9 +1,9 @@
 'use strict';
 
-var gulp = require('gulp');
-var eslint = require('gulp-eslint');
-var plumber = require('gulp-plumber');
-var beautify = require('gulp-beautify');
+const gulp = require('gulp');
+const eslint = require('gulp-eslint');
+const plumber = require('gulp-plumber');
+const beautify = require('gulp-beautify');
 
 gulp.task('lint', function() {
   gulp.src(['src/*.js'])
