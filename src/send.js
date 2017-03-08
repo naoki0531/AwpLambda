@@ -4,9 +4,9 @@ const ses = new aws.SES({
     region: 'us-west-2'
 });
 
-const to = [''];
-const from = '';
-
+const config = require('config');
+const to = [config.to];
+const from = config.from;
 
 module.exports = function(text, context, event) {
     const eParams = {
