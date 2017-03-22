@@ -31,7 +31,7 @@ module.exports = (text, context, event) => {
         Source: from
     };
 
-    ses.sendEmail(eParams, (err, data) => {
+    const email = ses.sendEmail(eParams, (err, data) => {
         if (err) {
             console.log(err);
 
