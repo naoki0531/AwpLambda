@@ -12,7 +12,7 @@ const repogitoryUrl = 'https://' + id + ':' + pass + '@' + repogitory;
 const localDir = '/tmp/awp/';
 
 const fs = require('fs');
-const simpleGit = require('simple-git')
+const simpleGit = require('simple-git');
 
 module.exports = (filePath) => {
     const date = new Date();
