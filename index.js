@@ -3,5 +3,5 @@ const convert = require('./src/convert');
 const send = require('./src/send');
 
 exports.handler = (event, context) => {
-    getFile(event, context).then(convert).then(send);
+    getFile(event.filePath).then(convert).then(send);
 };
