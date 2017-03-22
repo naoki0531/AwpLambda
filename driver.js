@@ -1,5 +1,5 @@
 var event = {
-    'filePath': '2017/0321.md'
+    'filePath': '2017/0321.md',
 };
 var context = {
     done: function(err,message){
