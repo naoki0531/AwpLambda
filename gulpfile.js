@@ -12,7 +12,7 @@ gulp.task('lint', function() {
         console.error(error.plugin + '\n' + error.message);
       }
     }))
-    .pipe(beautify({indent_size: 4}))
+    .pipe(beautify({indent_size: 2}))
     .pipe(eslint({ useEslintrc: true }))
     .pipe(eslint.format())
     .pipe(eslint.failOnError())
