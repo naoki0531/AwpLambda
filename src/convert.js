@@ -1,4 +1,2 @@
 const marked = require('marked');
-module.exports = function(text) {
-    return marked(text);
-};
+module.exports = text => marked(text);

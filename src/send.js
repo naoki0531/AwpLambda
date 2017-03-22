@@ -3,12 +3,11 @@ const ses = new aws.SES({
     apiVersion: '2010-12-01',
     region: 'us-west-2'
 });
-
 const config = require('config');
 const to = [config.to];
 const from = config.from;
 
-module.exports = function(text, context, event) {
+module.exports = (text, context, event) => {
     const eParams = {
         Destination: {
             ToAddresses: to
@@ -32,7 +31,7 @@ module.exports = function(text, context, event) {
         Source: from
     };
 
-    const email = ses.sendEmail(eParams, function(err, data) {
+    const email = ses.sendEmail(eParams, (err, data) => {
         if (err) {
             console.log(err);
 
