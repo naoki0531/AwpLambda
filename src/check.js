@@ -1,4 +1,4 @@
-exports.handler = (event, context) => {
+module.exports = (event, context) => {
     console.log('チェック処理を開始します。');
     const msg = JSON.parse(event.Records[0].Sns.Message);
     console.log(msg);
