@@ -13,6 +13,7 @@ module.exports = (event, context) => {
     if ( branchName === 'refs/heads/master' && msg.head_commit.added.length > 0) {
         console.log('マスターに対するPUSHのため、ファイル名取得処理を開始します。');
         filePath = msg.head_commit.added;
+        console.log('getFile.jsにファイルパス[' + filePath + ']を送ります。');
         
     } else {
         console.log('ブランチ名：[' + branchName + ']に対するPUSHまたは変更に対するマージのため、ファイル名送信を行わず処理を終了します。');
