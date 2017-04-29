@@ -14,7 +14,12 @@ touch ./config/default.json
 }
 ```
 
-## 実行
+## メルマガ送信時実行
 ```
 node driver.js
+```
+
+## マスターpush以外の挙動実行
+```
+node driver.js developPush.json
 ```
