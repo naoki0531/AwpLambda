@@ -1,23 +1,22 @@
-let event = {
-  Records: [{Sns: {Message: {}}}]
+const event = {
+  Records: [{ Sns: { Message: {} } }],
 };
-let context = {
-  done: function (err, message) {
-    return;
-  }
+const context = {
+  done: (err, message) => {},
 };
+
 updateEnv = false;
-const lambd = require('./index.js');
+const lambda = require('./index.js');
 const fs = require('fs');
 
 // set test json data name
-let jsonName = './event/masterPush.json';
-if (process.argv[2] !== undefined) {
-  jsonName = './event/' + process.argv[2];
+let jsonName = process.argv[2];
+if (typeof jsonName === 'undefined') {
+  jsonName = 'masterPush.json';
 }
 
-fs.readFile(jsonName, 'utf8', (err, data) => {
+fs.readFile(`./event/${jsonName}`, 'utf8', (err, data) => {
   event.Records[0].Sns.Message = data;
-  lambd.handler(event, context);
-})
+  lambda.handler(event, context);
+});
 
