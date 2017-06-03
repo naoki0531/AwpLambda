@@ -6,6 +6,8 @@ const check = require('./src/check');
 exports.handler = (event, context) => {
   const filePath = check(event, context);
   if (filePath !== '') {
-    getFile(filePath).then(convert).then(send);
+    setTimeout(() => {
+      getFile(filePath).then(convert).then(send);
+    }, 5000);
   }
 };

@@ -8,8 +8,8 @@ const config = require('config');
 
 const id = config.id;
 const pass = config.pass;
-const repogitory = config.repogitory;
-const repogitoryUrl = `https://${id}:${pass}@${repogitory}`;
+const repository = config.repository;
+const repositoryUrl = `https://${id}:${pass}@${repository}`;
 const localDir = '/tmp/awp/';
 
 const fs = require('fs');
@@ -20,7 +20,7 @@ module.exports = (filePath) => {
   const cloneDir = `${localDir}${date.getTime()}/`;
 
   return new Promise((resolve) => {
-    simpleGit().clone(repogitoryUrl, cloneDir, '', () => {
+    simpleGit().clone(repositoryUrl, cloneDir, '', () => {
       fs.readFile(cloneDir + filePath, 'utf-8', (err, data) => {
         resolve(data);
       });
