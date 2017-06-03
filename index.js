@@ -4,5 +4,8 @@ const send = require('./src/send');
 const check = require('./src/check');
 
 exports.handler = (event, context) => {
-    getFile(check(event, context)).then(convert).then(send);
+  const filePath = check(event, context);
+  if (filePath !== '') {
+    getFile(filePath).then(convert).then(send);
+  }
 };
