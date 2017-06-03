@@ -10,7 +10,7 @@ touch ./config/default.json
 {
 "id" : "{git user}",
 "pass" : "{git pass}",
-"repogitory" : "github.com/naoki0531/AwpCms.git"
+"repository" : "github.com/naoki0531/AwpCms.git"
 }
 ```
 
