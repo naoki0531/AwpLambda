@@ -2,6 +2,7 @@ const aws = require('aws-sdk');
 const config = require('config');
 
 const to = [config.to];
+const cc = [config.cc];
 const from = config.from;
 const ses = new aws.SES({
   apiVersion: '2010-12-01',
@@ -13,6 +14,7 @@ module.exports = (text) => {
   const eParams = {
     Destination: {
       ToAddresses: to,
+      CcAddresses: cc,
     },
     Message: {
       Body: {
