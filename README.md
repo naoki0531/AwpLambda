@@ -11,9 +11,9 @@ touch ./config/default.json
 "id" : "{git user}",
 "pass" : "{git pass}",
 "repository" : "github.com/naoki0531/AwpCms.git",
-"to" : "{to address}",
+"to" : "{\"to address\",\"to address\",\"to address\"}",
 "from" : "{from address}",
-"cc" : "{cc address}",
+"cc" : "{\"cc address\",\"cc address\",\"cc address\"}",
 }
 ```
 

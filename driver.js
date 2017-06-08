@@ -19,4 +19,3 @@ fs.readFile(`./event/${jsonName}`, 'utf8', (err, data) => {
   event.Records[0].Sns.Message = data;
   lambda.handler(event, context);
 });
-
