@@ -17,6 +17,7 @@ module.exports = (event, context) => {
 
   } else {
     console.log('ブランチ名：[' + branchName + ']に対するPUSHまたは変更に対するマージのため、ファイル名送信を行わず処理を終了します。');
+    context.done();
   }
 
   return filePath;
